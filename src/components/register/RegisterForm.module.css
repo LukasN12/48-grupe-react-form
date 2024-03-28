@@ -1,11 +1,25 @@
-.regForm {
+.form {
     display: flex;
     flex-direction: column;
-    gap: 1em;
-    padding: 0.5rem 0.2rem;
+    gap: 1rem;
+    max-width: 20rem;
 }
 
-.userInput {
+.formRow {
     display: flex;
-    gap: 0.5em;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.label {
+    font-size: 1.1rem;
+}
+.input {
+    padding: 0.2rem 0.5rem;
+    font-size: 1.3rem;
+    line-height: 1.2em;
+}
+.button {
+    padding: 0.2rem 0.5rem;
+    font-size: 1.3rem;
+
 }
