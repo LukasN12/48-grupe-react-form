@@ -3,7 +3,6 @@
 
     for (let i = formatedNumber.length; i < minSize; i++) {
             formatedNumber = '0' + formatedNumber;
-
     }
 
     return formatedNumber;
