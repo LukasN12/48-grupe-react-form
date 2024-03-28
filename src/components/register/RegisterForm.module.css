@@ -1,0 +1,11 @@
+.regForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 0.5rem 0.2rem;
+}
+
+.userInput {
+    display: flex;
+    gap: 0.5em;
+}

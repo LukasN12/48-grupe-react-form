@@ -1,5 +1,3 @@
-// import { FirstTry } from "../components/FirstTry";
-
 import { useEffect, useState } from "react";
 import { StudentList } from "../components/students/StudentList";
 import { StudentsNoData } from "../components/students/StudentsNoData";
@@ -14,7 +12,7 @@ export function PageStudents() {
 
        fetch(dataURL)
             .then(res => res.json())
-            .then(data => setStudentData(data))
+            .then(data => setStudentData(data.students))
             .catch(e => console.error(e));
     }, []);
 
@@ -25,7 +23,7 @@ export function PageStudents() {
                 <button onClick={() => setCount(count + 1)}>{count}</button>
             </h1>
             <p className="page-description">Students attending this class:</p>
-            {studentData.length === 0 ? <StudentsNoData /> : <StudentList />}        
+            {studentData.length === 0 ? <StudentsNoData /> : <StudentList data={studentData} />}        
         </>
     );
 }
