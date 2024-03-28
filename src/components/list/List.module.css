@@ -1,16 +1,15 @@
 .vegetables {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
     list-style: none;
 }
 
 .vegy {
     display: flex;
-    max-width: 20rem;
+    max-width: 40rem;
     justify-content: space-between;
     align-items: center;
-    gap: 2rem;
 }
 
 .vegyTitle {

@@ -1,31 +1,29 @@
-import { useState } from "react";
-import { List } from './components/list/List.jsx';
-import { Basketball } from "./components/basketball/Basketball";
-
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BasicLayout } from './layout/BasicLayout';
+import { LayoutWithAds } from './layout/LayoutWithAds';
+import { PageHome } from './pages/PageHome';
+import { NotFound } from "./components/NotFound";
+import { PageBasketball } from './pages/PageBasketball';
+import { PageVegetables } from './pages/PageVegetables';
+import { PageVegetablesInner } from './pages/PageVegetablesInner';
+import { PageStudents } from './pages/PageStudents';
 
 function App() {
-  const [count, setCount] = useState(0);
-
-
-  function increment() {
-    setCount(count + 1);
-  }
-
-  function decrement() {
-    setCount(count - 1);
-  }
-
-  return (
-    <>
-      <List />
-      <Basketball />
-      <h1>Hooks FTW</h1>
-      <div className="counter">
-        <button onClick={decrement}>-</button>
-        <span>{count}</span>
-        <button onClick={increment}>+</button>
-      </div>
-    </>
+    return (
+    <BrowserRouter>
+    <Routes>
+      <Route Component={BasicLayout}>
+        <Route index path='/' element={<PageHome />} />
+        <Route path='/basketball' element={<PageBasketball />} />
+        <Route path='/students' element={<PageStudents />} />
+        <Route path='*' element={<NotFound />} />
+      </Route>
+      <Route Component={LayoutWithAds}>
+        <Route path='/vegetables' element={<PageVegetables />} />
+        <Route path='/vegetables/:id' element={<PageVegetablesInner />} />
+      </Route>
+    </Routes>
+    </BrowserRouter>
   );
 }
 
